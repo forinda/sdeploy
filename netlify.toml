@@ -1,14 +1,8 @@
 [build]
-  # Writes .netlify/v1/functions/api.mjs (served at /api/*, see kick-deploy.ts).
+  # Writes .netlify/v1/functions/api.mjs, which serves every path (see kick-deploy.ts).
   # dist/public is an empty publish dir so no repo files are served as static.
   command = "pnpm run build:netlify && mkdir -p dist/public"
   publish = "dist/public"
 
 [build.environment]
   NODE_VERSION = "22"
-
-# Bare root goes to the API instead of a 404.
-[[redirects]]
-  from = "/"
-  to = "/api/v1/hello"
-  status = 302
