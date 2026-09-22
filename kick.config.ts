@@ -55,5 +55,5 @@ export default defineConfig({
       aliases: ['verify'],
     },
   ],
-  plugins:[deployPlugin()]
+  plugins: [deployPlugin({ apiPath: '' })]
 })
