@@ -1,5 +1,14 @@
-# web site netlify.toml, before the SPA redirect
+[build]
+  # Writes .netlify/v1/functions/api.mjs (served at /api/*, see kick-deploy.ts).
+  # dist/public is an empty publish dir so no repo files are served as static.
+  command = "pnpm run build:netlify && mkdir -p dist/public"
+  publish = "dist/public"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Bare root goes to the API instead of a 404.
 [[redirects]]
-  from = "/*"
-  to = "https://sdeploys.netlify.app/:splat"
-  status = 200
+  from = "/"
+  to = "/api/v1/hello"
+  status = 302
