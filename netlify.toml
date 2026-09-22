@@ -1,0 +1,5 @@
+# web site netlify.toml, before the SPA redirect
+[[redirects]]
+  from = "/*"
+  to = "https://6ab2e1cf1b22fdec592da323--sdeploys.netlify.app/:splat"
+  status = 200
