@@ -1,4 +1,5 @@
 import { defineConfig } from '@forinda/kickjs-cli'
+import { deployPlugin } from './kick-deploy'
 
 export default defineConfig({
   pattern: 'minimal',
@@ -54,4 +55,5 @@ export default defineConfig({
       aliases: ['verify'],
     },
   ],
+  plugins:[deployPlugin()]
 })

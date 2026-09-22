@@ -6,7 +6,11 @@
     "dev": "kick dev",
     "build": "kick build",
     "start": "kick start",
-    "test": "vitest run"
+    "test": "vitest run",
+    "build:netlify": "kick build:netlify",
+    "build:vercel": "kick build:vercel",
+    "clean": "rm -rf dist",
+    "build:all": "kick typegen && kick build && kick build:netlify && kick build:vercel"
   },
   "dependencies": {
     "@forinda/kickjs": "^8.6.0",
